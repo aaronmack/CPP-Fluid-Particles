@@ -42,25 +42,30 @@ endif(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
 # Optimization options for CUDA C/C++ 
 set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} --expt-extended-lambda -use_fast_math -Xcompiler \"/wd 4819 /wd 4267 /FS\"")
 
-set(Libs glew64)
-target_link_libraries(CPP_Fluid_Particles ${Libs})
+#set(Libs glew64)
+#target_link_libraries(CPP_Fluid_Particles ${Libs})
+
+find_package(GLUT REQUIRED)
+target_link_libraries(CPP_Fluid_Particles PRIVATE GLUT::GLUT)
+find_package(GLEW REQUIRED)
+target_link_libraries(CPP_Fluid_Particles PRIVATE GLEW::GLEW)
 
 #copy dlls
-add_custom_command(
-	TARGET CPP_Fluid_Particles
-	POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E copy_directory
-	"${CUDASAMPLESROOT}/bin/win64/Release"
-	$<TARGET_FILE_DIR:CPP_Fluid_Particles>
-	)
-	
+#add_custom_command(
+#	TARGET CPP_Fluid_Particles
+#	POST_BUILD
+#	COMMAND ${CMAKE_COMMAND} -E copy_directory
+#	"${CUDASAMPLESROOT}/bin/win64/Release"
+#	$<TARGET_FILE_DIR:CPP_Fluid_Particles>
+#	)
+#
 #copy shader files
 add_custom_command(
 	TARGET CPP_Fluid_Particles
 	POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E copy_directory
-	"${CUDASAMPLESROOT}/bin/win64/Release"
-	$<TARGET_FILE_DIR:CPP_Fluid_Particles>
+#	COMMAND ${CMAKE_COMMAND} -E copy_directory
+#	"${CUDASAMPLESROOT}/bin/win64/Release"
+#	$<TARGET_FILE_DIR:CPP_Fluid_Particles>
 	COMMAND ${CMAKE_COMMAND} -E copy
 	${CMAKE_CURRENT_SOURCE_DIR}/${shaderfile}
 	$<TARGET_FILE_DIR:CPP_Fluid_Particles>

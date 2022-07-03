@@ -21,7 +21,7 @@
 #include <thrust/transform.h>
 #include <thrust/reduce.h>
 #include <thrust/execution_policy.h>
-#include <helper_math.h>
+#include "helper_math.h"
 #include "DArray.h"
 #include "Particles.h"
 

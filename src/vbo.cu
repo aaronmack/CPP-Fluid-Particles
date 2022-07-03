@@ -18,7 +18,7 @@
 #include <vector>
 #include <memory>
 #include <cuda_runtime.h>
-#include <helper_math.h>
+#include "helper_math.h"
 #include "DArray.h"
 #include "Particles.h"
 #include "SPHParticles.h"

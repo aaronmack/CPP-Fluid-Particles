@@ -18,7 +18,7 @@
 #include <vector>
 #include <memory>
 #include <cuda_runtime.h>
-#include <helper_math.h>
+#include "helper_math.h"
 #include <thrust/sort.h>
 #include <thrust/scan.h>
 #include <thrust/fill.h>

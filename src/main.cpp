@@ -19,7 +19,7 @@
 #include <GL/glew.h>
 #include <cuda_gl_interop.h>
 #include <cuda_runtime.h>
-#include <helper_math.h>
+#include "helper_math.h"
 #include <GL/freeglut.h>
 #include <vector>
 #include <memory>

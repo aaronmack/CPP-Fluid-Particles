@@ -17,7 +17,7 @@
 
 #pragma once
 
-#include <helper_math.h>
+#include "helper_math.h"
 #include "global.h"
 
 static inline __device__ float cubic_spline_kernel(const float r, const float radius)
