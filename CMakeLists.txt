@@ -7,6 +7,8 @@ endif()
 project(CPP_Fluid_Particles VERSION 0.1.0 LANGUAGES CXX C CUDA)
 
 find_package(CUDA REQUIRED)
+find_package(CUDAToolkit)
+
 set(CMAKE_CUDA_ARCH 5 6)
 set(CMAKE_CONFIGURATION_TYPES "Release")
 

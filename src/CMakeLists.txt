@@ -50,6 +50,8 @@ target_link_libraries(CPP_Fluid_Particles PRIVATE GLUT::GLUT)
 find_package(GLEW REQUIRED)
 target_link_libraries(CPP_Fluid_Particles PRIVATE GLEW::GLEW)
 
+target_link_libraries(CPP_Fluid_Particles PRIVATE CUDA::cudart)
+
 #copy dlls
 #add_custom_command(
 #	TARGET CPP_Fluid_Particles
